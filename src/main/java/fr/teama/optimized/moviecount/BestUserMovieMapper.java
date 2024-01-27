@@ -1,4 +1,4 @@
-package fr.teama.moviecount;
+package fr.teama.optimized.moviecount;
 
 import org.apache.hadoop.io.*;
 import org.apache.hadoop.mapreduce.Mapper;

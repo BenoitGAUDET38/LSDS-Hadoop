@@ -1,22 +1,21 @@
-package fr.teama.groupmovie;
+package fr.teama.normal.task1.usermovie;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 import java.io.IOException;
 
-public class Job3 {
-    public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
+public class Job1 {
+    public static int execute() throws IOException, InterruptedException, ClassNotFoundException {
         Configuration conf = new Configuration();
-        Path input = new Path("/output/count-movie-name/part-r-00000");
-        Path output = new Path("/output/grouped-movies");
-        Job job = Job.getInstance(conf, "groupMovies");
+        Path inputRatings = new Path("/input/ratings.csv");
+        Path output = new Path("/output/best-user-movie");
+        Job job = Job.getInstance(conf, "bestUserMovie");
 
         // Delete the output directory if it exists
         FileSystem fs = FileSystem.get(conf);
@@ -24,16 +23,16 @@ public class Job3 {
             fs.delete(output, true);
         }
 
-        job.setJarByClass(Job3.class);
-        job.setMapperClass(MovieCountMapper.class);
-        job.setReducerClass(GroupMovieReducer.class);
+        job.setJarByClass(Job1.class);
+        job.setMapperClass(RatingMapper.class);
+        job.setReducerClass(RatingReducer.class);
 
         job.setOutputKeyClass(IntWritable.class);
-        job.setOutputValueClass(Text.class);
+        job.setOutputValueClass(MovieRateWritable.class);
 
-        FileInputFormat.addInputPath(job, input);
+        FileInputFormat.addInputPath(job, inputRatings);
         FileOutputFormat.setOutputPath(job, output);
 
-        System.exit(job.waitForCompletion(true) ? 0 : 1);
+        return job.waitForCompletion(true) ? 0 : 1;
     }
 }

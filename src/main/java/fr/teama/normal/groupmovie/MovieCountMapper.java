@@ -1,6 +1,5 @@
-package fr.teama.groupmovie;
+package fr.teama.normal.groupmovie;
 
-import fr.teama.moviecount.MovieIdOrNameWritable;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;

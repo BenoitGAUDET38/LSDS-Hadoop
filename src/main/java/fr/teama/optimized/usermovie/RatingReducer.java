@@ -1,4 +1,4 @@
-package fr.teama.usermovie;
+package fr.teama.optimized.usermovie;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.mapreduce.Reducer;

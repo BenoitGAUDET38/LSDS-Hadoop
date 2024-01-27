@@ -1,4 +1,4 @@
-package fr.teama.usermovie;
+package fr.teama.normal.task1.usermovie;
 
 import org.apache.hadoop.io.FloatWritable;
 import org.apache.hadoop.io.IntWritable;

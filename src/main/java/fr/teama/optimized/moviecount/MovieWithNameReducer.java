@@ -1,4 +1,4 @@
-package fr.teama.moviecount;
+package fr.teama.optimized.moviecount;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
