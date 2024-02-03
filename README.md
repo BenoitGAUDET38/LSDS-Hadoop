@@ -6,3 +6,7 @@
 
 - Dossier `normal` : Contient les fichiers correspondant à la version du projet suivant les consignes des étapes à suivres.
 - Dossier `optimized` : Contient les fichiers correspondant à la version du projet optimisée permettant de réduire le nombre de jobs nécessaires pour obtenir le résultat final.
+
+## Démonstration
+
+Lien vers la vidéo de démonstration : [https://youtu.be/PCbdFnUwWuA](https://youtu.be/PCbdFnUwWuA)
