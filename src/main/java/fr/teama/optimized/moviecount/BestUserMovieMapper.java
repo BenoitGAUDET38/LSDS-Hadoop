@@ -26,9 +26,6 @@ public class BestUserMovieMapper extends Mapper<LongWritable, Text, IntWritable,
 
         IntWritable movieIdWritable = new IntWritable(movieId);
 
-        MovieIdOrNameWritable movieIdOrNameWritable = new MovieIdOrNameWritable();
-        movieIdOrNameWritable.setMovieId(movieIdWritable);
-
         context.write(movieIdWritable, EMPTY_TEXT);
     }
 }
